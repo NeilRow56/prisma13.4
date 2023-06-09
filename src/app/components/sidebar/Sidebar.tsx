@@ -1,3 +1,4 @@
+import Link from "next/link";
 import prisma from "../../../../prisma";
 import CreateProject from "./CreateProject";
 
@@ -17,9 +18,9 @@ export default async function Sidebar() {
       </div>
       <ul>
         {projects.map((project) => (
-          <li className=" bg-slate-300 p-1 mt-3" key={project.id}>
-            {project.title}
-          </li>
+          <Link key={project.id} href={`/project/${project.id}`}>
+            <li className=" bg-slate-300 p-1 mt-3">{project.title}</li>
+          </Link>
         ))}
       </ul>
     </nav>
