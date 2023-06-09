@@ -8,7 +8,7 @@ const fetchProjects = async () => {
 
 export default async function Sidebar() {
   const projects = await fetchProjects();
-  console.log(projects);
+
   return (
     <nav className="flex p-4 flex-col min-h-screen w-1/4 bg-slate-100">
       <div className="flex flex-row flex-wrap gap-10 items-center">
@@ -17,7 +17,7 @@ export default async function Sidebar() {
       </div>
       <ul>
         {projects.map((project) => (
-          <li className=" bg.slate-50" key={project.id}>
+          <li className=" bg-slate-300 p-1 mt-3" key={project.id}>
             {project.title}
           </li>
         ))}
